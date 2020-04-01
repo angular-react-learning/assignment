@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UserInfoService } from "../user-info.service"
 
 @Component({
   selector: 'app-user',
@@ -8,20 +9,27 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UserComponent implements OnInit {
 
 
-  @Input("list") list : any[];
+  // @Input("list") list : any[];
 
   selectedUsers = [];
 
-  constructor() { }
+  constructor(private userInfoService : UserInfoService) { }
 
   ngOnInit(): void {
+    this.userInfoService.getList().subscribe((list)=>{
+      this.selectedUsers = list;
+      console.log(this.selectedUsers);
+    })
+
   }
 
-  searchUser(event)
-    {
-      this.selectedUsers = this.list.filter((item)=>{
-        return event.target.value === item.username;
-      })
-    }
+
+
+  // searchUser(event)
+  //   {
+  //     this.selectedUsers = this.list.filter((item)=>{
+  //       return event.target.value === item.username;
+  //     })
+  //   }
 
 }
