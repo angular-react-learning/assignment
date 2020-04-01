@@ -1,0 +1,9 @@
+<input (change)="searchUser($event)" placeholder="Search" />
+
+<div class="user-list">
+  <ul>
+    <li *ngFor="let item of selectedUsers">
+      {{item.username}}, {{item.email}}
+    </li>
+  </ul>
+</div>
