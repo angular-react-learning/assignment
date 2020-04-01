@@ -11,6 +11,7 @@ import { UserComponent } from './user/user.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { LoginComponent } from './login/login.component';
 import { LibraryComponent } from './library/library.component';
+import { MomentPipe } from './moment.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LibraryComponent } from './library/library.component';
     UserComponent,
     WrapperComponent,
     LoginComponent,
-    LibraryComponent
+    LibraryComponent,
+    MomentPipe
   ],
   imports: [
     BrowserModule,

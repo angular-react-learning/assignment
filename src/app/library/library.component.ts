@@ -10,7 +10,7 @@ import { LibraryService } from '../library.service'
 export class LibraryComponent implements OnInit {
 
   books = [];
-  createdOn = new Date().toISOString();
+  createdOn = new Date().setHours(3);
   constructor(private libraryService : LibraryService) { }
 
   ngOnInit(): void {
