@@ -12,6 +12,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { LoginComponent } from './login/login.component';
 import { LibraryComponent } from './library/library.component';
 import { MomentPipe } from './moment.pipe';
+import { TestingDirective } from './testing.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MomentPipe } from './moment.pipe';
     WrapperComponent,
     LoginComponent,
     LibraryComponent,
-    MomentPipe
+    MomentPipe,
+    TestingDirective
   ],
   imports: [
     BrowserModule,

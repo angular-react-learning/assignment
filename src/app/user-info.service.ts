@@ -24,4 +24,9 @@ export class UserInfoService {
         return this.listObserve;
     }
 
+  calculate(a : number,b : number)
+    {
+      return a + b;
+    }
+
 }
