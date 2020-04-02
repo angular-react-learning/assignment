@@ -48,6 +48,6 @@ describe('LoginComponent', () => {
     username.nativeElement.value = "praveen";
     password.nativeElement.value = "";
     fixture.detectChanges();
-    expect(submit.nativeElement.disabled).toBeTruthy();
+    expect(submit.nativeElement.disabled).toBeFalsy();
   });
 });
