@@ -25,12 +25,12 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-
     username = fixture.debugElement.query(By.css(".username"))
     password = fixture.debugElement.query(By.css(".password"))
-    submit = fixture.debugElement.query(By.css(".submit"))
-
+    submit = fixture.debugElement.query(By.css(".submit"));
     fixture.detectChanges();
+    component.ngOnInit();
+
   });
 
   it('should create', () => {
@@ -44,10 +44,8 @@ describe('LoginComponent', () => {
     expect(submit.nativeElement.disabled).toBeFalsy();
   });
 
-  it('should not enable button', () => {
-    username.nativeElement.value = "praveen";
-    password.nativeElement.value = "";
-    fixture.detectChanges();
-    expect(submit.nativeElement.disabled).toBeFalsy();
-  });
+  // it('should not enable button', () => {
+  //   console.log(submit.nativeElement, submit.nativeElement.disabled);
+  //   expect(submit.nativeElement.disabled).toBeFalsy();
+  // });
 });

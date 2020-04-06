@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
 import { UserInfoService } from './user-info.service';
 
@@ -22,14 +22,12 @@ describe('UserInfoService', () => {
     expect(service.calculate(2, 2)).toEqual(4);
   });
 
-  it("should add item to list", ()=>{
-    const user = { username : "praveen", email : "praveen@example.com", phone : 3424424234 }
-    service.add(user);
-    const observe = service.getList();
-    observe.subscribe((response : any)=>{
+  it("should add item to list", (done) => {
+    const user = { username: "praveen", email: "praveen@example.com", phone: 3424424234 }
+    service.getList().subscribe((response: any) => {
       expect(response[0]).toEqual(user);
+      done();      
     })
-    
+    service.add(user);
   })
-
 });
